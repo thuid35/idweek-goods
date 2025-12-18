@@ -5,28 +5,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: transparent;
     border-radius: 9999px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: white;
+    border-color: rgb(21, 21, 21);
+    border-width: 3px;
+    color: rgb(255, 152, 33);
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    user-select: none;
 }
 
 .arrowButton:hover {
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.arrowButton:active {
-    transform: scale(0.9);
+    background: rgb(229, 229, 229);
 }
 
 .arrowIcon {
-    width: 2.5rem;
-    height: 2.5rem;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    height: 1.5rem;
 }

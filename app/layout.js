@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "工設週 2025 - 模型選擇器",
+  title: "工設週 2025",
   description: "IDWEEK 2025 3D 模型選擇器",
 };
 

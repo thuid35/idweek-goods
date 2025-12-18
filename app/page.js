@@ -5,15 +5,23 @@ import { PARTS } from "./components/constants";
 import { DollCanvas } from "./components/DollCanvas";
 import { Navbar } from "./components/Navbar";
 import { ArrowButton } from "./components/ArrowButton";
+import { ProgressBar } from "./components/ProgressBar";
 import styles from "./page.module.css";
 
 export default function Home() {
   const [headIndex, setHeadIndex] = useState(0);
   const [bodyIndex, setBodyIndex] = useState(0);
   const [legsIndex, setLegsIndex] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
 
   const cycle = (setter, current, max, dir) => {
     setter((current + dir + max) % max);
+  };
+
+  const handleNextStep = () => {
+    if (currentStep < 2) {
+      setCurrentStep(currentStep + 1);
+    }
   };
 
   return (
@@ -84,6 +92,9 @@ export default function Home() {
           </div>
 
         </div>
+
+        {/* 進度條 */}
+        <ProgressBar currentStep={currentStep} onNext={handleNextStep} />
 
       </main>
     </>

@@ -12,7 +12,7 @@ import { Doll } from "./DollParts";
 export function DollCanvas({ headIndex, bodyIndex, legsIndex }) {
   return (
     <Canvas 
-      camera={{ position: [0, 0, 10], fov: 50 }}
+      camera={{ position: [0, 0, 8], fov: 50 }}
       style={{ 
         position: 'absolute',
         top: 0,

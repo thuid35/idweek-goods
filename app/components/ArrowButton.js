@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Svg from "next/image";
 import styles from "./ArrowButton.module.css";
 
 /**
@@ -13,20 +14,13 @@ export function ArrowButton({ direction, onClick }) {
   
   return (
     <button onClick={onClick} className={styles.arrowButton}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={2.5}
-        stroke="currentColor"
+      <Svg
+        src={isLeft ? "/icons/arrow_left.svg" : "/icons/arrow_right.svg"}
+        alt={isLeft ? "左箭頭" : "右箭頭"}
+        width={40}
+        height={40}
         className={styles.arrowIcon}
-      >
-        {isLeft ? (
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-        ) : (
-          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-        )}
-      </svg>
+      />
     </button>
   );
-}
+};

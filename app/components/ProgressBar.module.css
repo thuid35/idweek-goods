@@ -1,0 +1,162 @@
+.progressContainer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.progressWrapper {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+}
+
+/* 進度線 */
+.progressLine {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+}
+
+/* 步驟容器 */
+.stepsContainer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.stepItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 步驟圓點 */
+.stepDot {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.stepDot.stepActive {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: #667eea;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+/* 勾選圖標 */
+.checkIcon {
+    width: 14px;
+    height: 14px;
+    color: white;
+}
+
+/* 步驟標籤 */
+.stepLabel {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.stepDot.stepActive+.stepLabel {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* 下一步按鈕 */
+.nextButton {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+}
+
+.nextButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+}
+
+.nextButton:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.nextButton:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.arrowIcon {
+    width: 24px;
+    height: 24px;
+    color: white;
+    stroke-width: 2.5;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .progressContainer {
+        padding: 0 20px;
+    }
+
+    .progressWrapper {
+        max-width: calc(100% - 80px);
+    }
+
+    .stepLabel {
+        font-size: 11px;
+    }
+
+    .stepDot {
+        width: 22px;
+        height: 22px;
+    }
+
+    .nextButton {
+        width: 48px;
+        height: 48px;
+    }
+
+    .arrowIcon {
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -4,28 +4,21 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: rgb(23, 23, 23);
+  background: white;
   display: flex;
-  align-items: center;
   justify-content: center;
   padding-top: 5rem;
 }
 
 .containerWrapper {
   position: relative;
-  width: 70vw;
-  height: 60vh;
+  width: 90vw;
+  height: 80vh;
 }
 
 .canvasContainer {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .buttonOverlay {
@@ -55,17 +48,17 @@
 }
 
 .buttonLeft {
-  left: 2rem;
+  left: 5px;
 }
 
 .buttonLeftMiddle {
-  left: 1rem;
+  left: 5px;
 }
 
 .buttonRight {
-  right: 2rem;
+  right: 5px;
 }
 
 .buttonRightMiddle {
-  right: 1rem;
+  right: 5px;
 }
