@@ -1,11 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-
 import { PARTS } from "./components/constants";
-import { Doll } from "./components/DollParts";
+import { DollCanvas } from "./components/DollCanvas";
 
 // --- Static UI Component ---
 function ArrowButton({ direction, onClick }) {
@@ -64,39 +61,15 @@ export default function Home() {
   return (
     <main className="w-screen h-screen overflow-hidden bg-neutral-900 flex items-center justify-center">
       
-      {/* Main Container: 80vw width, 60vh height, centered */}
-      <div className="relative w-[80vw] h-[60vh] bg-white/5 rounded-3xl border border-white/10 shadow-2xl flex flex-col justify-center">
+      {/* Main Container: 70vw width, 60vh height, centered */}
+      <div className="relative w-[70vw] h-[60vh] bg-white/5 backdrop-blur-sm rounded-3xl border border-white/20 shadow-[0_20px_60px_rgba(0,0,0,0.5)] flex flex-col justify-center">
         
         {/* 3D Layer - Absolute Inset */}
-        <Canvas 
-          camera={{ position: [0, 0, 4.5], fov: 45 }}
-          style={{ 
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            borderRadius: '1.5rem',
-            overflow: 'hidden'
-          }}
-        >
-                <ambientLight intensity={0.5} />
-                <directionalLight position={[5, 10, 5]} intensity={1} />
-                <spotLight position={[-5, 5, 2]} intensity={0.5} angle={0.5} />
-                
-                <Doll 
-                    headIndex={headIndex} 
-                    bodyIndex={bodyIndex} 
-                    legsIndex={legsIndex} 
-                />
-                
-                <OrbitControls 
-                    enableZoom={false} 
-                    enablePan={false} 
-                    minPolarAngle={Math.PI / 2.5} 
-                    maxPolarAngle={Math.PI / 1.8}
-                />
-        </Canvas>
+        <DollCanvas
+          headIndex={headIndex}
+          bodyIndex={bodyIndex}
+          legsIndex={legsIndex}
+        />
 
 
         {/* Static UI Layer */}

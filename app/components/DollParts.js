@@ -63,7 +63,7 @@ export function Legs({ index }) {
     if (meshRef.current) {
          gsap.fromTo(meshRef.current.position, 
             { y: -2 }, 
-            { y: -1.5, duration: 0.4, ease: "power2.out" }
+            { y: 0.3, duration: 0.4, ease: "power2.out" }
         );
     }
   }, [index]);

@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://your-domain.com/sitemap.xml',
-  }
-}
+    sitemap: 'https://goods.thuid.net/sitemap.xml',
+  };
+};
