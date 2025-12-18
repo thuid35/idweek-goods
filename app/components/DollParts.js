@@ -23,14 +23,12 @@ export function Head({ index }) {
   const color = PARTS.head[index].color;
 
   return (
-    <group position={[0, 1.5, 0]}>
-      <mesh ref={meshRef}>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={color} />
-      </mesh>
-    </group>
+    <mesh ref={meshRef} position={[0, 1.5, 0]}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color={color} />
+    </mesh>
   );
-}
+};
 
 export function Body({ index }) {
   const meshRef = useRef();
@@ -47,14 +45,12 @@ export function Body({ index }) {
   const color = PARTS.body[index].color;
 
   return (
-    <group position={[0, 0, 0]}>
-      <mesh ref={meshRef}>
-        <boxGeometry args={[1, 2, 0.8]} />
-        <meshStandardMaterial color={color} />
-      </mesh>
-    </group>
+    <mesh ref={meshRef} position={[0, 0, 0]}>
+      <boxGeometry args={[1, 2, 0.8]} />
+      <meshStandardMaterial color={color} />
+    </mesh>
   );
-}
+};
 
 export function Legs({ index }) {
   const meshRef = useRef();
@@ -63,7 +59,7 @@ export function Legs({ index }) {
     if (meshRef.current) {
          gsap.fromTo(meshRef.current.position, 
             { y: -2 }, 
-            { y: 0.3, duration: 0.4, ease: "power2.out" }
+            { y: -1, duration: 0.4, ease: "power2.out" }
         );
     }
   }, [index]);
@@ -71,22 +67,20 @@ export function Legs({ index }) {
   const color = PARTS.legs[index].color;
 
   return (
-    <group position={[0, -1.5, 0]}>
-      <mesh ref={meshRef}>
-         <group>
-            <mesh position={[-0.3, -0.5, 0]}>
-                <boxGeometry args={[0.3, 1.5, 0.3]} />
-                <meshStandardMaterial color={color} />
-            </mesh>
-            <mesh position={[0.3, -0.5, 0]}>
-                <boxGeometry args={[0.3, 1.5, 0.3]} />
-                <meshStandardMaterial color={color} />
-            </mesh>
-         </group>
-      </mesh>
-    </group>
+    <mesh ref={meshRef} position={[0, -1.5, 0]}>
+       <group>
+          <mesh position={[-0.3, -0.5, 0]}>
+              <boxGeometry args={[0.3, 1.5, 0.3]} />
+              <meshStandardMaterial color={color} />
+          </mesh>
+          <mesh position={[0.3, -0.5, 0]}>
+              <boxGeometry args={[0.3, 1.5, 0.3]} />
+              <meshStandardMaterial color={color} />
+          </mesh>
+       </group>
+    </mesh>
   );
-}
+};
 
 export function Doll({ headIndex, bodyIndex, legsIndex }) {
   return (
@@ -96,4 +90,4 @@ export function Doll({ headIndex, bodyIndex, legsIndex }) {
       <Legs index={legsIndex} />
     </group>
   );
-}
+};

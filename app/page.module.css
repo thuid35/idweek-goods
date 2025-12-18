@@ -1,81 +1,71 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-}
+/* 主頁面樣式 */
 
 .main {
-  display: flex;
   width: 100vw;
   height: 100vh;
-}
-
-.intro {
+  overflow: hidden;
+  background: rgb(23, 23, 23);
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  justify-content: center;
+  padding-top: 5rem;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.containerWrapper {
+  position: relative;
+  width: 70vw;
+  height: 60vh;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.canvasContainer {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.buttonOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* 按鈕位置 */
+.buttonWrapper {
+  position: absolute;
+  pointer-events: auto;
+}
+
+.buttonTop {
+  top: 10%;
+}
+
+.buttonMiddle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.buttonBottom {
+  bottom: 10%;
+}
+
+.buttonLeft {
+  left: 2rem;
+}
+
+.buttonLeftMiddle {
+  left: 1rem;
+}
+
+.buttonRight {
+  right: 2rem;
+}
+
+.buttonRightMiddle {
+  right: 1rem;
 }

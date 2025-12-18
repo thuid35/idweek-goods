@@ -20,7 +20,8 @@ export function DollCanvas({ headIndex, bodyIndex, legsIndex }) {
         width: '100%',
         height: '100%',
         borderRadius: '1.5rem',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        zIndex: 1
       }}
     >
       {/* 環境光 */}
@@ -36,7 +37,7 @@ export function DollCanvas({ headIndex, bodyIndex, legsIndex }) {
       <Doll 
         headIndex={headIndex} 
         bodyIndex={bodyIndex} 
-        legsIndex={legsIndex} 
+        legsIndex={legsIndex}
       />
       
       {/* 軌道控制器 */}
