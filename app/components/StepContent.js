@@ -168,9 +168,19 @@ export function StepContent({
       {/* 步驟 2：重選按鈕（位於進度條上方） */}
       {currentStep === 2 && (
         <div className={styles.resetButtonSection}>
-          <button className={styles.resetButton} onClick={onReset}>
+          <button 
+            className={styles.resetButton}
+            onClick={onReset}
+          >
             我要重選
           </button>
+        </div>
+      )}
+
+      {/* 步驟 0：提示文字（位於進度條上方） */}
+      {currentStep === 0 && (
+        <div className={styles.hintTextSection}>
+          \ 模型可以旋轉查看呦！ /
         </div>
       )}
     </>
