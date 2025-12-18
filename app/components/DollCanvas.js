@@ -2,17 +2,17 @@
 
 import React from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Preload } from "@react-three/drei";
 import { Doll } from "./DollParts";
 
 /**
  * 獨立的 Three.js Canvas 模組
  * 負責渲染 3D 場景和娃娃模型
  */
-export function DollCanvas({ headIndex, bodyIndex, legsIndex }) {
+export function DollCanvas({ headIndex, bodyIndex, legsIndex, scale = 1, animateOnComplete = false, onModelLoad }) {
   return (
     <Canvas 
-      camera={{ position: [0, 0, 8], fov: 50 }}
+      camera={{ position: [0, 0, 15], fov: 50 }}
       style={{ 
         position: 'absolute',
         top: 0,
@@ -38,6 +38,9 @@ export function DollCanvas({ headIndex, bodyIndex, legsIndex }) {
         headIndex={headIndex} 
         bodyIndex={bodyIndex} 
         legsIndex={legsIndex}
+        scale={scale}
+        animateOnComplete={animateOnComplete}
+        onModelLoad={onModelLoad}
       />
       
       {/* 軌道控制器 */}
@@ -47,6 +50,9 @@ export function DollCanvas({ headIndex, bodyIndex, legsIndex }) {
         minPolarAngle={Math.PI / 2.5} 
         maxPolarAngle={Math.PI / 1.8}
       />
+      
+      {/* 預載入所有資源 */}
+      <Preload all />
     </Canvas>
   );
 };

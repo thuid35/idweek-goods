@@ -12,11 +12,11 @@ export function Navbar() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.title}>
-            工設週 2025 · 模型選擇器
+            IDWEEK2025 · GOODS
           </h1>
           <div className={styles.info}>
             <span className={styles.subtitle}>
-              選擇你的專屬組合
+              
             </span>
           </div>
         </div>

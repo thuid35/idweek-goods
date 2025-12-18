@@ -6,16 +6,17 @@
     left: 0;
     right: 0;
     z-index: 50;
-    background: rgba(23, 23, 23, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgb(38, 38, 38);
 }
 
 .container {
     max-width: 1200px;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     margin: 0 auto;
     padding: 1rem 1.5rem;
+    z-index: 50;
 }
 
 .content {
@@ -27,7 +28,7 @@
 .title {
     font-size: 1.25rem;
     font-weight: bold;
-    color: white;
+    color: rgb(38, 38, 38);
     margin: 0;
 }
 

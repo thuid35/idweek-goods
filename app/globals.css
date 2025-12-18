@@ -5,11 +5,12 @@
 
 html,
 body {
-  overflow: hidden;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+  overscroll-behavior: none;
+  /* 防止過度捲動 */
 }
 
 body {
@@ -20,6 +21,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
+  overscroll-behavior: none;
+  /* 防止過度捲動 */
 }
 
 a {

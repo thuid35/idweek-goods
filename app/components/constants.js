@@ -1,17 +1,17 @@
 export const PARTS = {
   head: [
-    { color: "#FF5733" }, // Red-Orange
-    { color: "#33FF57" }, // Green
-    { color: "#3357FF" }, // Blue
+    { name: 'Yobiao Head', path: '/3dparts/yobiao/head.stl' },
+    { name: 'Danzuan Head', path: '/3dparts/danzuan/head.stl' },
+    { name: 'Spray Head', path: '/3dparts/spray/head.stl' },
   ],
   body: [
-    { color: "#33FFF5" }, // Cyan
-    { color: "#FF33F5" }, // Pink
-    { color: "#F5FF33" }, // Yellow
+    { name: 'Yobiao Body', path: '/3dparts/yobiao/body.stl' },
+    { name: 'Danzuan Body', path: '/3dparts/danzuan/body.stl' },
+    { name: 'Spray Body', path: '/3dparts/spray/body.stl' },
   ],
   legs: [
-    { color: "#FF8C33" }, // Orange
-    { color: "#8C33FF" }, // Purple
-    { color: "#33FF8C" }, // Mint
+    { name: 'Yobiao Legs', path: '/3dparts/yobiao/legs.stl' },
+    { name: 'Danzuan Legs', path: '/3dparts/danzuan/legs.stl' },
+    { name: 'Spray Legs', path: '/3dparts/spray/legs.stl' },
   ],
 };

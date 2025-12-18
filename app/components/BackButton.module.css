@@ -1,0 +1,31 @@
+/* 返回按鈕（左上角） */
+.backButton {
+    position: absolute;
+    top: 5.5rem;
+    left: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.85rem;
+    background: transparent;
+    border: 1.5px solid rgb(38, 38, 38);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgb(38, 38, 38);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.backButton:hover {
+    background: rgb(38, 38, 38);
+    color: white;
+    transform: translateX(-4px);
+}
+
+.backIcon {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5;
+}

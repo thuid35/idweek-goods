@@ -1,0 +1,81 @@
+.phoneInputContainer {
+    margin: 0;
+}
+
+.label {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.inputWrapper {
+    width: 100%;
+}
+
+.input {
+    font-size: 1.125rem;
+    border: 2px solid #e0e0e0;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 0.75rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.05em;
+}
+
+.input:focus {
+    border-color: #4A90E2;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1);
+}
+
+.input::placeholder {
+    color: #aaa;
+    font-family: inherit;
+}
+
+.inputError {
+    border-color: #E74C3C;
+    background-color: #FFF5F5;
+}
+
+.inputError:focus {
+    box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.1);
+}
+
+.inputValid {
+    border-color: #27AE60;
+    background-color: #F0FFF4;
+    padding-right: 3rem;
+}
+
+.inputValid:focus {
+    box-shadow: 0 0 0 4px rgba(39, 174, 96, 0.1);
+}
+
+.checkIcon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: #27AE60;
+    pointer-events: none;
+}
+
+.errorMessage {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #E74C3C;
+    font-weight: 500;
+}
+
+.hint {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #666;
+}

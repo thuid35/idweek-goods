@@ -6,9 +6,9 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    border-radius: 9999px;
+    border-radius: 16px;
     border-color: rgb(21, 21, 21);
-    border-width: 3px;
+    border-width: 2px;
     color: rgb(255, 152, 33);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -16,7 +16,7 @@
 }
 
 .arrowButton:hover {
-    background: rgb(229, 229, 229);
+    background: rgb(243, 243, 243);
 }
 
 .arrowIcon {

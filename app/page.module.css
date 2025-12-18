@@ -1,64 +1,16 @@
 /* 主頁面樣式 */
 
 .main {
+  position: relative;
   width: 100vw;
-  height: 100vh;
   overflow: hidden;
   background: white;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding-top: 5rem;
-}
-
-.containerWrapper {
-  position: relative;
-  width: 90vw;
-  height: 80vh;
-}
-
-.canvasContainer {
-  position: absolute;
-  inset: 0;
-}
-
-.buttonOverlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* 按鈕位置 */
-.buttonWrapper {
-  position: absolute;
-  pointer-events: auto;
-}
-
-.buttonTop {
-  top: 10%;
-}
-
-.buttonMiddle {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.buttonBottom {
-  bottom: 10%;
-}
-
-.buttonLeft {
-  left: 5px;
-}
-
-.buttonLeftMiddle {
-  left: 5px;
-}
-
-.buttonRight {
-  right: 5px;
-}
-
-.buttonRightMiddle {
-  right: 5px;
+  padding-bottom: 100px;
+  /* 為進度條留空間 */
+  overscroll-behavior: none;
+  /* 防止過度捲動 */
 }

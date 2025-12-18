@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './ProgressBar.module.css';
 
-export function ProgressBar({ currentStep = 0, onNext }) {
-  const steps = ['頭部', '身體', '腿部'];
+export function ProgressBar({ currentStep = 0, onNext, disabled = false }) {
+  const steps = ['選擇模型', '輸入資料', '完成'];
   
   return (
     <div className={styles.progressContainer}>
@@ -12,7 +12,7 @@ export function ProgressBar({ currentStep = 0, onNext }) {
         <div className={styles.progressLine}>
           <div 
             className={styles.progressFill} 
-            style={{ width: `${(currentStep / (steps.length - 1)) * 100}%` }}
+            style={{ width: `${(currentStep / (steps.length - 1)) * 105}%` }}
           />
         </div>
         
@@ -37,7 +37,7 @@ export function ProgressBar({ currentStep = 0, onNext }) {
       <button 
         className={styles.nextButton}
         onClick={onNext}
-        disabled={currentStep >= steps.length - 1}
+        disabled={disabled || currentStep >= steps.length - 1}
       >
         <svg className={styles.arrowIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <line x1="5" y1="12" x2="19" y2="12" strokeWidth="2" strokeLinecap="round"/>
