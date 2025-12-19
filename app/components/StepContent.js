@@ -154,20 +154,24 @@ export function StepContent({
       {currentStep === 2 && (
         <div className={styles.completeSection}>
           <div className={styles.completeTitle}>完成！</div>
-          {showQRCode && (
-            <QRCodeDisplay
-              headIndex={headIndex}
-              bodyIndex={bodyIndex}
-              legsIndex={legsIndex}
-              phoneNumber={phoneNumber}
-            />
-          )}
-        </div>
-      )}
-
-      {/* 步驟 2：重選按鈕（位於進度條上方） */}
-      {currentStep === 2 && (
-        <div className={styles.resetButtonSection}>
+          
+          {/* QR-Code 區域 - 始終保留空間 */}
+          <div className={styles.qrcodeArea}>
+            {showQRCode && (
+              <>
+                <QRCodeDisplay
+                  headIndex={headIndex}
+                  bodyIndex={bodyIndex}
+                  legsIndex={legsIndex}
+                  phoneNumber={phoneNumber}
+                />
+                <div className={styles.qrcodeHint}>
+                  請截圖或攜帶此 QR-Code 至現場交給工作人員！
+                </div>
+              </>
+            )}
+          </div>
+          
           <button 
             className={styles.resetButton}
             onClick={onReset}

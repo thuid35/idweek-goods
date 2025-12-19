@@ -40,9 +40,6 @@ export function QRCodeDisplay({ headIndex, bodyIndex, legsIndex, phoneNumber }) 
           fgColor="#000000"
         />
       </div>
-      <div className={styles.qrcodeHint}>
-        請截圖或攜帶此 QR-Code 至現場交給工作人員！
-      </div>
     </div>
   );
 }

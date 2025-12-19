@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useRef, useEffect, Suspense } from "react";
-import { useLoader } from "@react-three/fiber";
-import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
 import gsap from "gsap";
 import { PARTS } from "./constants";
+import { usePreloadedModel } from "./ModelPreloader";
 
 /**
  * STL 模型載入組件
+ * 使用預載入的模型快取
  */
 function STLModel({ path, position = [0, 0, -4.5], scale = 1, onLoad }) {
-  const geometry = useLoader(STLLoader, path);
+  const geometry = usePreloadedModel(path);
   const meshRef = useRef();
 
   // 當幾何體載入完成時調用回調

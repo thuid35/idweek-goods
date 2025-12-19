@@ -4,6 +4,7 @@ import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload } from "@react-three/drei";
 import { Doll } from "./DollParts";
+import { ModelPreloader } from "./ModelPreloader";
 
 /**
  * 獨立的 Three.js Canvas 模組
@@ -32,6 +33,9 @@ export function DollCanvas({ headIndex, bodyIndex, legsIndex, scale = 1, animate
       
       {/* 聚光燈 */}
       <spotLight position={[-5, 5, 2]} intensity={0.5} angle={0.5} />
+      
+      {/* 預載入所有模型 */}
+      <ModelPreloader />
       
       {/* 娃娃模型 */}
       <Doll 
