@@ -1,0 +1,35 @@
+/* 容器包裝器 - 步驟 1 時縮小模型區域 */
+.containerWrapper {
+    position: relative;
+    width: 90vw;
+    height: 30vh;
+    margin-top: 6rem;
+    flex-shrink: 0;
+    transition: height 0.3s ease;
+}
+
+.canvasContainer {
+    position: absolute;
+    inset: 0;
+}
+
+/* 電話輸入區段 */
+.phoneInputSection {
+    width: 95vw;
+    margin-top: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* 預覽標題 */
+.previewTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+}

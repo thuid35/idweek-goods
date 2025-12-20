@@ -1,0 +1,101 @@
+/* 容器包裝器 - 步驟 2 特殊佈局 */
+.containerWrapper {
+    position: relative;
+    width: 90vw;
+    height: 30vh;
+    margin-top: 6rem;
+    margin-bottom: -30vh;
+    /* 負值讓下方內容可以疊上來 */
+    z-index: 100;
+    /* 確保 Canvas 在上層 */
+    flex-shrink: 0;
+    transition: height 0.3s ease;
+}
+
+.canvasContainer {
+    position: absolute;
+    inset: 0;
+}
+
+/* 完成區段 - 垂直 flex 佈局 */
+.completeSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    pointer-events: auto;
+    /* 恢復互動性 */
+}
+
+/* 完成標題 */
+.completeTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #27AE60;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* QR-Code 區域 - 保留固定空間 */
+.qrcodeArea {
+    min-height: 350px;
+    /* 為 QR-Code + 說明文字預留空間 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* QR-Code 說明文字 */
+.qrcodeHint {
+    font-size: 0.875rem;
+    color: #666;
+    text-align: center;
+    max-width: 400px;
+    line-height: 1.5;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* 重選按鈕 */
+.resetButton {
+    width: 100%;
+    max-width: 500px;
+    padding: 1.25rem 3rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    background: rgb(38, 38, 38);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.resetButton:hover {
+    background: rgb(60, 60, 60);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.resetButton:active {
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

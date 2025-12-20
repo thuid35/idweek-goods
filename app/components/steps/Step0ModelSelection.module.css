@@ -1,0 +1,46 @@
+/* 容器包裝器 */
+.containerWrapper {
+    position: relative;
+    width: 90vw;
+    height: 70vh;
+    flex-shrink: 0;
+}
+
+.canvasContainer {
+    position: absolute;
+    inset: 0;
+}
+
+/* 提示文字區段 - 位於進度條上方 */
+.hintTextSection {
+    position: fixed;
+    bottom: 100px;
+    /* 進度條高度 80px + 間距 10px */
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #9d9d9d;
+    text-align: center;
+    z-index: 90;
+    /* 低於進度條（100）但高於其他內容 */
+    animation: fadeIn 0.5s ease-in-out;
+    pointer-events: none;
+    /* 不影響點擊事件 */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
