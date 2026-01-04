@@ -2,12 +2,12 @@
 .mainContainer {
     position: relative;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 2px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 1rem;
+    padding: 1rem 1rem 200px 1rem;
     gap: 1rem;
     z-index: 10;
     overflow-y: auto;
