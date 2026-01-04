@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Navbar } from "./components/Navbar";
-import { BackButton } from "./components/BackButton";
+import { Navbar } from "./components/layout/Navbar";
+import { BackButton } from "./components/ui/BackButton";
 import { StepContent } from "./components/StepContent";
-import { ProgressBar } from "./components/ProgressBar";
+import { ProgressBar } from "./components/ui/ProgressBar";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import styles from "./page.module.css";
 
@@ -19,8 +19,8 @@ export default function Home() {
     setLegsIndex,
     currentStep,
     setCurrentStep,
-    phoneNumber,
-    setPhoneNumber,
+    userName,
+    setUserName,
   } = useLocalStorage();
 
   // Loading 狀態
@@ -39,11 +39,10 @@ export default function Home() {
 
   // 步驟控制函數
   const handleNextStep = () => {
-    // 如果在步驟1，檢查手機號碼是否有效
+    // 如果在步驟1，檢查姓名是否有效
     if (currentStep === 1) {
-      const isValidPhone = phoneNumber.length === 10 && phoneNumber.startsWith('09');
-      if (!isValidPhone) {
-        alert('請輸入正確的手機號碼（10位數字，以09開頭）');
+      if (!userName || userName.trim() === '') {
+        alert('請輸入您的姓名');
         return;
       }
     }
@@ -65,13 +64,13 @@ export default function Home() {
     setHeadIndex(0);
     setBodyIndex(0);
     setLegsIndex(0);
-    setPhoneNumber('');
+    setUserName('');
   };
 
-  // 檢查手機號碼是否有效（10位數字，以09開頭）
-  const isPhoneValid = phoneNumber.length === 10 && phoneNumber.startsWith('09');
-  // 在步驟1時，如果手機號碼無效則禁用下一步按鈕
-  const isNextDisabled = currentStep === 1 && !isPhoneValid;
+  // 檢查姓名是否有效
+  const isNameValid = userName && userName.trim().length > 0;
+  // 在步驟1時，如果姓名無效則禁用下一步按鈕
+  const isNextDisabled = currentStep === 1 && !isNameValid;
 
   return (
     <>
@@ -93,8 +92,8 @@ export default function Home() {
           setBodyIndex={setBodyIndex}
           legsIndex={legsIndex}
           setLegsIndex={setLegsIndex}
-          phoneNumber={phoneNumber}
-          setPhoneNumber={setPhoneNumber}
+          userName={userName}
+          setUserName={setUserName}
           isLoading={isLoading}
           onReset={handleReset}
         />

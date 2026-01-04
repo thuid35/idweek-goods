@@ -3,13 +3,14 @@
     position: relative;
     width: 90vw;
     height: 30vh;
-    margin-top: 6rem;
+    margin-top: 2rem;
     flex-shrink: 0;
     transition: height 0.3s ease;
 }
 
 .canvasContainer {
     position: absolute;
+    height: 240px;
     inset: 0;
 }
 

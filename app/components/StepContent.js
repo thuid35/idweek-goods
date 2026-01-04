@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Step0ModelSelection } from './steps/Step0ModelSelection';
-import { Step1PhoneInput } from './steps/Step1PhoneInput';
+import { Step1NameInput } from './steps/Step1NameInput';
 import { Step2Complete } from './steps/Step2Complete';
 
 /**
@@ -17,8 +17,8 @@ export function StepContent({
   setBodyIndex,
   legsIndex,
   setLegsIndex,
-  phoneNumber,
-  setPhoneNumber,
+  userName,
+  setUserName,
   isLoading,
   onReset,
 }) {
@@ -38,12 +38,12 @@ export function StepContent({
 
   if (currentStep === 1) {
     return (
-      <Step1PhoneInput
+      <Step1NameInput
         headIndex={headIndex}
         bodyIndex={bodyIndex}
         legsIndex={legsIndex}
-        phoneNumber={phoneNumber}
-        setPhoneNumber={setPhoneNumber}
+        userName={userName}
+        setUserName={setUserName}
         isLoading={isLoading}
       />
     );
@@ -55,7 +55,7 @@ export function StepContent({
         headIndex={headIndex}
         bodyIndex={bodyIndex}
         legsIndex={legsIndex}
-        phoneNumber={phoneNumber}
+        userName={userName}
         onReset={onReset}
       />
     );

@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowButton } from './ArrowButton';
+import { ArrowButton } from '../ui/ArrowButton';
 import { PARTS } from './constants';
 import styles from './ModelSelectionControls.module.css';
 

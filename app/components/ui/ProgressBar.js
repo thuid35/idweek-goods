@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ProgressBar.module.css';
 
 export function ProgressBar({ currentStep = 0, onNext, disabled = false }) {
-  const steps = ['選擇模型', '輸入資料', '完成'];
+  const steps = ['選擇模型', '取名時間', '完成'];
   
   return (
     <div className={styles.progressContainer}>

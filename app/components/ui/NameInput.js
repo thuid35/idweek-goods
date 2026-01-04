@@ -1,48 +1,43 @@
 "use client";
 
 import React, { useState } from 'react';
-import styles from './PhoneInput.module.css';
+import styles from './NameInput.module.css';
 
 /**
- * 電話號碼輸入組件
- * @param {string} value - 電話號碼值
+ * 姓名輸入組件
+ * @param {string} value - 姓名值
  * @param {function} onChange - 值變更處理函數
  */
-export function PhoneInput({ value, onChange }) {
+export function NameInput({ value, onChange }) {
   const [error, setError] = useState('');
 
   const handleChange = (e) => {
-    const input = e.target.value.replace(/\D/g, ''); // 只保留數字
+    const input = e.target.value;
+    onChange(input);
     
-    if (input.length <= 10) {
-      onChange(input);
-      
-      // 驗證格式
-      if (input.length > 0 && input.length < 10) {
-        setError('請輸入完整的 10 位數手機號碼');
-      } else if (input.length === 10 && !input.startsWith('09')) {
-        setError('手機號碼必須以 09 開頭');
-      } else {
-        setError('');
-      }
+    // 驗證格式 - 簡單驗證非空
+    if (input.trim().length === 0 && input.length > 0) {
+      setError('請輸入有效姓名');
+    } else {
+      setError('');
     }
   };
 
-  const isValid = value.length === 10 && value.startsWith('09');
+  const isValid = value && value.trim().length > 0;
 
   return (
     <div className={styles.phoneInputContainer}>
       <label className={styles.label}>
-        請留下你的手機號碼
+        幫你的模型取一個名字吧！
       </label>
       <div className={styles.inputWrapper}>
         <input
-          type="tel"
+          type="text"
           value={value}
           onChange={handleChange}
-          placeholder="0912345678"
+          placeholder="ex. Suima"
           className={`${styles.input} ${error ? styles.inputError : ''} ${isValid ? styles.inputValid : ''}`}
-          maxLength={10}
+          maxLength={20}
         />
         {isValid && (
           <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -51,7 +46,7 @@ export function PhoneInput({ value, onChange }) {
         )}
       </div>
       {error && <div className={styles.errorMessage}>{error}</div>}
-      <div className={styles.hint}>您的手機號碼僅供後續聯絡使用</div>
+      <div className={styles.hint}>這個名字其實不會用在任何地方</div>
     </div>
   );
 }

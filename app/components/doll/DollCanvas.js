@@ -10,10 +10,19 @@ import { ModelPreloader } from "./ModelPreloader";
  * 獨立的 Three.js Canvas 模組
  * 負責渲染 3D 場景和娃娃模型
  */
-export function DollCanvas({ headIndex, bodyIndex, legsIndex, scale = 1, animateOnComplete = false, onModelLoad }) {
+export function DollCanvas({ 
+  headIndex, 
+  bodyIndex, 
+  legsIndex, 
+  scale = 1, 
+  animateOnComplete = false, 
+  onModelLoad,
+  cameraPosition = [0, 0, 15],
+  cameraFov = 50
+}) {
   return (
     <Canvas 
-      camera={{ position: [0, 0, 15], fov: 50 }}
+      camera={{ position: cameraPosition, fov: cameraFov }}
       style={{ 
         position: 'absolute',
         top: 0,

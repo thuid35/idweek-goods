@@ -9,7 +9,7 @@ export function useLocalStorage() {
   const [bodyIndex, setBodyIndex] = useState(0);
   const [legsIndex, setLegsIndex] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [userName, setUserName] = useState('');
 
   // 從 localStorage 載入狀態
   useEffect(() => {
@@ -17,13 +17,13 @@ export function useLocalStorage() {
     const savedHeadIndex = localStorage.getItem('headIndex');
     const savedBodyIndex = localStorage.getItem('bodyIndex');
     const savedLegsIndex = localStorage.getItem('legsIndex');
-    const savedPhoneNumber = localStorage.getItem('phoneNumber');
+    const savedUserName = localStorage.getItem('userName');
 
     if (savedStep !== null) setCurrentStep(parseInt(savedStep));
     if (savedHeadIndex !== null) setHeadIndex(parseInt(savedHeadIndex));
     if (savedBodyIndex !== null) setBodyIndex(parseInt(savedBodyIndex));
     if (savedLegsIndex !== null) setLegsIndex(parseInt(savedLegsIndex));
-    if (savedPhoneNumber !== null) setPhoneNumber(savedPhoneNumber);
+    if (savedUserName !== null) setUserName(savedUserName);
   }, []);
 
   // 儲存狀態到 localStorage
@@ -32,8 +32,8 @@ export function useLocalStorage() {
     localStorage.setItem('headIndex', headIndex.toString());
     localStorage.setItem('bodyIndex', bodyIndex.toString());
     localStorage.setItem('legsIndex', legsIndex.toString());
-    localStorage.setItem('phoneNumber', phoneNumber);
-  }, [currentStep, headIndex, bodyIndex, legsIndex, phoneNumber]);
+    localStorage.setItem('userName', userName);
+  }, [currentStep, headIndex, bodyIndex, legsIndex, userName]);
 
   return {
     headIndex,
@@ -44,7 +44,7 @@ export function useLocalStorage() {
     setLegsIndex,
     currentStep,
     setCurrentStep,
-    phoneNumber,
-    setPhoneNumber,
+    userName,
+    setUserName,
   };
 }

@@ -1,9 +1,9 @@
 "use client";
 
 import React from 'react';
-import { DollCanvas } from '../DollCanvas';
-import { LoadingSpinner } from '../LoadingSpinner';
-import { ModelSelectionControls } from '../ModelSelectionControls';
+import { DollCanvas } from '../doll/DollCanvas';
+import { LoadingSpinner } from '../ui/LoadingSpinner';
+import { ModelSelectionControls } from '../doll/ModelSelectionControls';
 import styles from './Step0ModelSelection.module.css';
 
 /**
@@ -54,6 +54,8 @@ export function Step0ModelSelection({
               setIsLoadingModel(false);
               hasLoadedOnce.current = true;
             }}
+            cameraPosition={[0, 0, 15]}
+            cameraFov={50}
           />
         </div>
 

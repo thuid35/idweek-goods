@@ -23,7 +23,7 @@ function STLModel({ path, position = [0, 0, -4.5], scale = 1, onLoad }) {
   return (
     <mesh ref={meshRef} position={position} scale={scale} rotation={[0, 0, 0]}>
       <primitive object={geometry} attach="geometry" />
-      <meshStandardMaterial color="#f6f6f6ff" />
+      <meshStandardMaterial color="#f3f3f3" />
     </mesh>
   );
 }
@@ -139,32 +139,18 @@ export function Doll({ headIndex, bodyIndex, legsIndex, scale = 1, animateOnComp
       // 完成動畫序列
       const tl = gsap.timeline();
       
-      // 1. 快速旋轉展示（360度，0.8秒）
+      // 1. 快速旋轉展示（720度，1.2秒，慶祝感）
       tl.to(groupRef.current.rotation, {
-        y: Math.PI * 2,
-        duration: 0.8,
-        ease: "power2.inOut"
-      })
-      // 2. 快速旋轉並縮小（0.5秒）
-      .to(groupRef.current.rotation, {
         y: Math.PI * 4,
-        duration: 0.5,
-        ease: "power2.in"
-      }, "-=0.2")
-      .to(groupRef.current.scale, {
-        x: 0.3,
-        y: 0.3,
-        z: 0.3,
-        duration: 0.5,
-        ease: "power2.in"
-      }, "-=0.5")
-      // 3. 縮到最小消失（0.3秒）
-      .to(groupRef.current.scale, {
-        x: 0,
-        y: 0,
-        z: 0,
-        duration: 0.3,
-        ease: "power2.in"
+        duration: 1.2,
+        ease: "back.out(1.2)"
+      })
+      // 2. 進入緩慢旋轉循環（無限循環）
+      .to(groupRef.current.rotation, {
+        y: Math.PI * 6, // 繼續旋轉
+        duration: 4,
+        ease: "none",
+        repeat: -1 // 無限重複
       });
     }
   }, [animateOnComplete]);
