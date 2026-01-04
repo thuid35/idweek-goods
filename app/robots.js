@@ -2,8 +2,7 @@ export default function robots() {
   return {
     rules: {
       userAgent: '*',
-      allow: '/',
-      disallow: '/private/',
+      disallow: '/',
     },
     sitemap: 'https://goods.thuid.net/sitemap.xml',
   };
